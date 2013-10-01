@@ -1,0 +1,64 @@
+﻿@model nt_lab3_HomeInventory.Models.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Item</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Manufacturer.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Manufacturer.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Model)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Identifier)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Identifier)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PurchaseDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchaseDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PurchasePrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchasePrice)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ItemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

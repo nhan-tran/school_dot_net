@@ -1,0 +1,57 @@
+﻿@model nt_lab3_HomeInventory.ViewModel.FileAttachment
+
+@{
+    ViewBag.Title = "File Attachment";
+    string Style;
+}
+
+<h2>File Attachment</h2>
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" })) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FileAttachment</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ItemId, "Item")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ItemId","Select...")
+            @Html.ValidationMessageFor(model => model.ItemId)
+  
+        </div>
+
+        <div>
+            @Html.LabelFor(x => x.File)
+            @Html.TextBoxFor(x => x.File, new { type = "file" })
+            @Html.ValidationMessageFor(x => x.File)
+        </div>
+        <p>
+            <input type="submit" value="Upload" />
+        </p>
+
+        @if(Model.Message!= null) {
+            if (@Model.Message == "Import completed successfully.")
+            {
+                Style = "color:green; font-weight:700;";
+            }
+            else {
+                Style = "color:red; font-weight:700;";
+            }
+            <div class="message" style = "@Style">@Model.Message</div>
+        }
+
+    </fieldset>
+}
+
+<div>
+    <p>
+    @Html.ActionLink("Back to List", "Index", "Items")
+    </p>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

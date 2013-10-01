@@ -1,0 +1,57 @@
+﻿@model nt_lab3_HomeInventory.Models.Policy
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Policy</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PolicyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PolicyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PolicyNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PolicyNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PhoneNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StartDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StartDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EndDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EndDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PolicyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

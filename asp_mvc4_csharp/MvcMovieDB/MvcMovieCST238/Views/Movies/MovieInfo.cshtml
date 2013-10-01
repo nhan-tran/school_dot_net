@@ -1,0 +1,88 @@
+﻿@model MvcMovieCST238.ViewModels.MovieInfoViewModel
+
+@{
+    ViewBag.Title = "MovieInfo";
+}
+
+<h2>Movie Information</h2>
+
+<p>
+    @Html.ActionLink("New Movie", "CreateMovie") 
+    @Html.ActionLink("Modify Movie", "Modify")
+    @Html.ActionLink("Grid View Movie", "Index")
+
+</p>
+@using (Html.BeginForm("RestoreMovies", "Movies"))
+{
+    <input type="submit" value="Restore Movies" />
+}
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => Model.Movies[0].Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => Model.Movies[0].ReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => Model.Movies[0].Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => Model.Movies[0].Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => Model.Movies[0].Rating)
+        </th>
+        <th>
+           Director
+        </th>
+        <th>
+            Birthdate
+        </th>
+    </tr>
+
+@foreach (var item in Model.Movies)
+{
+    string name = "unknown";
+    char period = '.';
+    string birthdate = "";
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        @* Director lookup *@
+        <td>
+            @foreach (var director in Model.Directors){
+                  if (director.ID == item.DirectorID)
+                  {
+                      name = director.Name;
+                      birthdate = director.Birthday.ToString("MM/dd/yyyy");
+                      break; 
+                  }
+              }
+            @*<p>The director of @item.Title is @name@period</p>*@
+            @name
+        </td>
+        <td>
+            @if (birthdate != "")
+            {
+                @birthdate
+            }
+            @*  *@
+        </td>
+    </tr>
+}
+</table>

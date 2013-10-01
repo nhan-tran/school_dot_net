@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8F2B8B0-4682-4D12-8DFB-74C92D8C12DD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nt_lab3a</RootNamespace>
+    <AssemblyName>nt_lab3a</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accessories\AccessoryFactory.cs" />
+    <Compile Include="Accessories\Style_1980s.cs" />
+    <Compile Include="Accessories\Style_1990s.cs" />
+    <Compile Include="Accessories\Style_Modern.cs" />
+    <Compile Include="Accessories\Style_Futuristic.cs" />
+    <Compile Include="Accessories\Style_1970s.cs" />
+    <Compile Include="Accessories\Accessory.cs" />
+    <Compile Include="Accessories\Tray.cs" />
+    <Compile Include="Accessories\MonitorStand.cs" />
+    <Compile Include="Accessories\CornerCover.cs" />
+    <Compile Include="Accessories\Drawer.cs" />
+    <Compile Include="Accessories\IStyle.cs" />
+    <Compile Include="Accessories\Shelf.cs" />
+    <Compile Include="AssemblyLines\AssemblyLine.cs" />
+    <Compile Include="Desks\AmericanDeskFactory.cs" />
+    <Compile Include="Desks\RollTop.cs" />
+    <Compile Include="Desks\LeftSide.cs" />
+    <Compile Include="Desks\RightSide.cs" />
+    <Compile Include="Desks\TopSide.cs" />
+    <Compile Include="Desks\LeftSideExtension.cs" />
+    <Compile Include="Desks\DeskPart.cs" />
+    <Compile Include="Desks\ExecutiveDesk.cs" />
+    <Compile Include="Desks\RightSideExtension.cs" />
+    <Compile Include="Desks\RollTopDesk.cs" />
+    <Compile Include="Desks\StandardDesk.cs" />
+    <Compile Include="Desks\LeftLDesk.cs" />
+    <Compile Include="Desks\Desk.cs" />
+    <Compile Include="Desks\DeskFactory.cs" />
+    <Compile Include="Desks\RightLDesk.cs" />
+    <Compile Include="Desks\SwedishDeskFactory.cs" />
+    <Compile Include="Displays\ManagerDisplay.cs" />
+    <Compile Include="Displays\IObserver.cs" />
+    <Compile Include="Displays\ISubject.cs" />
+    <Compile Include="Displays\UnitDisplay.cs" />
+    <Compile Include="GlobalCounters\GlobalCounter.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

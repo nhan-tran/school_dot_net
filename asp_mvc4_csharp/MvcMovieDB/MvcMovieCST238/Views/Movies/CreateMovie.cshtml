@@ -1,0 +1,79 @@
+﻿@model MvcMovieCST238.ViewModels.MovieInfoViewModel
+
+@{
+    ViewBag.Title = "CreateMovie";
+}
+
+<h2>CreateMovie</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>MovieInfoViewModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Movies[0].Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Movies[0].Title)
+            @Html.ValidationMessageFor(model => model.Movies[0].Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Movies[0].ReleaseDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Movies[0].ReleaseDate)
+            @Html.ValidationMessageFor(model => model.Movies[0].ReleaseDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Movies[0].Genre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Movies[0].Genre)
+            @Html.ValidationMessageFor(model => model.Movies[0].Genre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Movies[0].Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Movies[0].Price)
+            @Html.ValidationMessageFor(model => model.Movies[0].Price)
+        </div>
+        <div class="editor-label" >
+            @Html.LabelFor(model => model.Movies[0].Rating)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Movies[0].Rating)
+            @Html.ValidationMessageFor(model => model.Movies[0].Rating)
+        </div>
+         <div class="editor-label" >
+            Director
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Directors[0].Name)
+            @Html.ValidationMessageFor(model => model.Directors[0].Name)
+        </div>
+        <div class="editor-label" >
+            @Html.LabelFor(model => model.Directors[0].Birthday)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Directors[0].Birthday)
+            @Html.ValidationMessageFor(model => model.Directors[0].Birthday)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,1 @@
+Design Patterns with C# - Focus on learning GoF patterns.
